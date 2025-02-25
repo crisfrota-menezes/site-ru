@@ -1,0 +1,44 @@
+{
+  "segunda": {
+    "prato_principal": "Carne Assada",
+    "guarnicao": "Arroz e Feijão",
+    "acompanhamento": "Salada de Alface",
+    "opcao_vegana": "Quibe de Lentilha"
+  },
+  "terca": {
+    "prato_principal": "Frango Grelhado",
+    "guarnicao": "Purê de Batata",
+    "acompanhamento": "Tomate Cereja",
+    "opcao_vegana": "Panqueca de Espinafre"
+  },
+  "quarta": {
+    "prato_principal": "Peixe Assado",
+    "guarnicao": "Macarrão",
+    "acompanhamento": "Brócolis",
+    "opcao_vegana": "Falafel"
+  },
+  "quinta": {
+    "prato_principal": "Bife à Parmegiana",
+    "guarnicao": "Arroz Branco",
+    "acompanhamento": "Cenoura Cozida",
+    "opcao_vegana": "Hambúrguer de Grão de Bico"
+  },
+  "sexta": {
+    "prato_principal": "Frango ao Molho de Morango",
+    "guarnicao": "Batata Frita",
+    "acompanhamento": "Salada de Beterraba",
+    "opcao_vegana": "Estrogonofe de Cogumelos"
+  },
+  "sabado": {
+    "prato_principal": "Carne de Sol",
+    "guarnicao": "Arroz de Leite",
+    "acompanhamento": "Salada de Repolho",
+    "opcao_vegana": "Feijoada Vegana"
+  },
+  "domingo": {
+    "prato_principal": "Bife à Milanesa",
+    "guarnicao": "Arroz Integral",
+    "acompanhamento": "Salada de Pepino",
+    "opcao_vegana": "Moqueca de Banana"
+  }
+}

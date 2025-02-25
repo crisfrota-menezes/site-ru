@@ -1,0 +1,4 @@
+[
+  { "ra": "12345", "senha": "senha123", "tipo": "estudante" },
+  { "loginAdm": "67890", "senhaAdm": "admin123", "tipo": "administrador" }
+]

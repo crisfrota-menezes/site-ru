@@ -1,0 +1,6 @@
+{
+  "menu": [
+    { "nome": "Lanche", "preco": 15.0 },
+    { "nome": "Combo Refeição", "preco": 20.0 }
+  ]
+}

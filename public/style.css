@@ -1,0 +1,499 @@
+/* Layout principal */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: "Roboto", monospace;
+  background-color: #d6d6d6;
+}
+
+body,
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+.auth-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container-small {
+  width: 329px;
+  height: 563px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  flex-direction: column;
+  position: absolute;
+  bottom: 185px;
+  left: 775px;
+}
+
+#admin-button {
+  /* faz o botão de admin menor no canto esquerdo e mais para baixo */
+  width: 50px;
+  border-radius: 8 8 8 8px;
+  position: absolute;
+  bottom: 25px;
+}
+
+/* Layout principal após login */
+#navbar {
+  position: fixed;
+  bottom: 50%;
+  width: 250px;
+  background: #d4d4d4;
+  color: rgb(0, 0, 0);
+  display: none; /* Inicialmente oculto */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+#navbar button {
+  font-family: "Roboto", monospace;
+  font-size: 20px;
+  background: #d4d4d4;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  text-align: left;
+  margin: 0;
+}
+
+#navbar button:hover {
+  background-color: #fecc00;
+}
+
+#menina2 {
+  /* centraliza no meio da tela, excluindo a navbar da esquerda que tem 250px: */
+  margin-left: 250px;
+  width: 55%;
+  height: 55%;
+  position: relative;
+}
+
+/* Layout principal após login */
+#navbar-adm {
+  position: fixed;
+  bottom: 50%;
+  width: 250px;
+  background: #d4d4d4;
+  color: rgb(0, 0, 0);
+  display: none; /* Inicialmente oculto */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+#navbar-adm button {
+  font-family: "Roboto", monospace;
+  font-size: 20px;
+  background: #d4d4d4;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  text-align: left;
+  margin: 0;
+}
+
+#navbar-adm button:hover {
+  background-color: #fecc00;
+}
+
+#navRU {
+  /* posiciona no topo da navbar */
+  position: fixed;
+  top: 0;
+}
+
+.container-full {
+  margin-left: 250px; /* Espaço para a navbar */
+  padding: 20px;
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  background: #fff;
+  display: none; /* Inicialmente oculto */
+}
+
+/*personaliza imagem para caber na tela e centraliza: */
+#menina {
+  width: 80%;
+  height: 70%;
+  object-fit: contain;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+}
+
+/*personaliza o h1 de id h1 */
+#h2 {
+  /* posiciona no topo da navbar */
+  position: absolute;
+  bottom: 100%;
+}
+
+button {
+  font-family: "Roboto", monospace;
+  padding: 10px;
+  margin: 5px;
+  background-color: #e0dfdf;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 20px;
+  max-width: 400px;
+}
+
+#button-adm {
+  font-family: "Roboto", monospace;
+  padding: 10px;
+  margin: 5px;
+  background-color: #e0dfdf;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 20px;
+  max-width: 400px;
+}
+
+button:hover {
+  background-color: #cfcfcf;
+}
+
+button[type="submit"] {
+  background-color: #fecc00;
+  color: #fff;
+  font-size: 20px;
+  height: 50px;
+  width: 80%;
+  border-radius: 12px;
+  /* Centraliza */
+  margin-left: 10%;
+}
+
+button[type="submit"]:hover {
+  background-color: #f2b707;
+}
+
+#visitor-button {
+  /* coloca o botão mais centralizado no container small */
+  margin-top: 10%;
+  margin-bottom: 15%;
+}
+
+#student-button {
+  /* coloca o botão mais centralizado no container small */
+  margin-top: 20%;
+}
+
+.logo {
+  width: 30%;
+  /* centraliza na parte de baixo da tela */
+  position: absolute;
+  bottom: 33px;
+  left: 38%;
+}
+
+#finalizar-pedido {
+  width: 200px !important; /* Largura fixa */
+  margin: 20px auto !important;
+  padding: 12px !important;
+  font-size: 16px !important;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-left: 10%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  margin-bottom: 15px;
+  height: 20px;
+  width: 75%;
+  padding: 8px;
+  background-color: #e0dfdf;
+  border: none;
+  border-radius: 12px;
+  /* Centraliza */
+  margin-left: 10%;
+}
+
+#home-screen,
+#cardapio-screen,
+#carrinho-screen,
+#pagamento-screen,
+#menu-screen {
+  display: none;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 20px 10px;
+}
+
+#cardapio-list,
+#carrinho-list {
+  width: 50%;
+  max-height: 300px;
+  padding: 0 20px;
+  list-style-type: none;
+}
+
+#cardapio-list li,
+#carrinho-list li {
+  background-color: #f8f9fa;
+  width: calc(100% - 20px);
+  margin-bottom: 8px 0;
+  padding: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#cardapio-list li:hover {
+  background-color: #e9ecef;
+}
+
+/* Estilos do Cardápio */
+#cardapio-info {
+  width: 80%;
+  margin: 20px auto;
+  background: #e4e4e4;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.cardapio-dia h3 {
+  color: #2c3e50;
+  border-bottom: 2px solid #fecc00;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.cardapio-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.cardapio-label {
+  font-weight: 600;
+  color: #2c3e50;
+  width: 40%;
+}
+
+.cardapio-value {
+  color: #34495e;
+  width: 58%;
+  text-align: right;
+}
+
+.aviso {
+  color: #e67e22;
+  text-align: center;
+  padding: 20px;
+}
+
+.erro {
+  color: #e74c3c;
+  text-align: center;
+  padding: 20px;
+}
+
+#cardapio-info p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+#carrinho-list button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 50%;
+  margin: 20px 0;
+}
+
+#carrinho-list button:hover {
+  background-color: #c82333;
+}
+
+/* Estilos da tela de pagamento */
+#pagamento-screen {
+  display: none;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+#resumo-pagamento {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 95%;
+}
+
+h2 {
+  font-family: "Roboto", monospace;
+  text-align: justify;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0 10px;
+  font-size: 30px;
+}
+
+#login {
+  font-family: "Roboto", monospace;
+  text-align: center;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0 10px;
+  font-size: 30px;
+}
+
+.metodos-pagamento {
+  grid-template-columns: 1fr; /* Uma coluna apenas */
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.metodo-pagamento {
+  width: 100%;
+  padding: 15px !important;
+  flex-direction: row; /* Alinha ícone e texto */
+  gap: 15px;
+}
+
+.metodo-pagamento img {
+  width: 32px !important;
+  height: 32px !important;
+  margin: 0 !important;
+}
+
+.metodo-pagamento:hover {
+  background: #e9f5ff;
+  transform: translateY(-2px);
+}
+
+#lista-pagamento {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#lista-pagamento li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+#valor-total {
+  color: #28a745;
+  font-size: 1.4em;
+}
+
+/* Estilos da tela de confirmação */
+#confirmacao-screen {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.ticket-container {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 25px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* Centraliza */
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+}
+
+.ticket-code {
+  background: #fff;
+  border: 2px dashed #28a745;
+  padding: 15px;
+  margin: 20px 0;
+  text-align: center;
+  border-radius: 8px;
+}
+
+#codigo-ticket {
+  font-family: monospace;
+  font-size: 1.5em;
+  color: #28a745;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+#voltar-inicio {
+  background-color: #fecc00;
+  width: 200px;
+  margin: 20px auto 0;
+  display: block;
+}
+
+#finalizar-pedido:disabled {
+  background-color: #cccccc !important;
+  cursor: not-allowed !important;
+  opacity: 0.7;
+}
+
+#finalizar-pedido:disabled:hover {
+  background-color: #cccccc !important;
+}
+
+#menu-list {
+  width: 50%;
+  max-height: 300px;
+  padding: 0 20px;
+  list-style-type: none;
+}
+
+#menu-list li {
+  background-color: #f8f9fa;
+  width: calc(100% - 20px);
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#menu-list li:hover {
+  background-color: #e9ecef;
+}
+
+/* Oculta a barra de navegação na tela de confirmação */
+.navbar-oculta {
+  display: none !important;
+}
