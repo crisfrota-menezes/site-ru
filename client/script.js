@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Função para buscar o cardápio
   async function fetchCardapio() {
     try {
-      const response = await fetch("/cardapio.json");
+      const response = await fetch("/data/cardapio.json");
       if (!response.ok) {
         throw new Error("Erro ao carregar o cardápio.");
       }
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Função para buscar o menu
   async function fetchMenu() {
     try {
-      const response = await fetch("/menu.json");
+      const response = await fetch("/data/menu.json");
       if (!response.ok) {
         throw new Error("Erro ao carregar o menu.");
       }
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const senha = document.getElementById("senha").value;
 
       try {
-        const response = await fetch("/login", {
+        const response = await fetch("/data/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ ra, senha }),
@@ -263,7 +263,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   function carregarRelatorioCompras() {
-    fetch("/compras.json")
+    fetch("/data/compras.json")
       .then((response) => response.json())
       .then((compras) => {
         const relComprasList = document.getElementById("compras-adm-list");
@@ -293,22 +293,27 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   function carregarRelatorioExecucao() {
-    fetch("/execucao.txt")
-      .then((response) => response.text())
+    fetch("/data/execucao.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Erro ao carregar o relatório de execução.");
+        }
+        return response.json();
+      })
       .then((execucao) => {
-        let arrayexecucao = execucao.split("\n");
-        arrayexecucao = arrayexecucao.slice(0, -1);
         const relExecucaoList = document.getElementById("execucao-adm-list");
         if (relExecucaoList) {
-          relExecucaoList.innerHTML = ""; // Limpa a lista atual
-          arrayexecucao.forEach((linha) => {
+          relExecucaoList.innerHTML = ""; // Limpa a lista antes de preencher
+  
+          execucao.forEach((registro) => { // Para cada item do array
             const li = document.createElement("li");
-            li.textContent = linha;
+            li.textContent = `Status: ${registro.status} - Data: ${registro.data}`;
             relExecucaoList.appendChild(li);
           });
         }
-      });
-  }
+      })
+      .catch((error) => console.error("Erro ao carregar relatório:", error));
+  }  
 
   // Chame esta função ao exibir a tela de relatório de execução
   document.getElementById("nav-adm-execucao").addEventListener("click", () => {
