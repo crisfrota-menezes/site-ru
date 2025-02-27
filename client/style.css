@@ -45,16 +45,7 @@ html {
   padding: 0;
 }
 
-#navbar button {
-  font-family: "Roboto", monospace;
-  font-size: 20px;
-  background: #d4d4d4;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-  text-align: left;
-  margin: 0;
-}
-
+#navbar button,
 #navbar-adm button {
   font-family: "Roboto", monospace;
   font-size: 20px;
@@ -65,10 +56,7 @@ html {
   margin: 0;
 }
 
-#navbar button:hover {
-  background-color: #fecc00;
-}
-
+#navbar button:hover,
 #navbar-adm button:hover {
   background-color: #fecc00;
 }
@@ -214,7 +202,9 @@ input {
 }
 
 #cardapio-list,
-#carrinho-list {
+#carrinho-list,
+#menu-list,
+#lista-pagamento {
   width: 50%;
   max-height: 300px;
   padding: 0 20px;
@@ -222,7 +212,9 @@ input {
 }
 
 #cardapio-list li,
-#carrinho-list li {
+#carrinho-list li,
+#menu-list li,
+#lista-pagamento li {
   background-color: #f8f9fa;
   width: calc(100% - 20px);
   margin-bottom: 8px 0;
@@ -232,7 +224,8 @@ input {
   transition: background-color 0.3s;
 }
 
-#cardapio-list li:hover {
+#cardapio-list li:hover,
+#menu-list li:hover {
   background-color: #e9ecef;
 }
 
@@ -344,17 +337,6 @@ h2 {
   transform: translateY(-2px);
 }
 
-#lista-pagamento {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 20px;
-}
-
-#lista-pagamento li {
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-}
-
 #valor-total {
   color: #28a745;
   font-size: 1.4em;
@@ -407,27 +389,6 @@ h2 {
 
 #finalizar-pedido:disabled:hover {
   background-color: #cccccc !important;
-}
-
-#menu-list {
-  width: 50%;
-  max-height: 300px;
-  padding: 0 20px;
-  list-style-type: none;
-}
-
-#menu-list li {
-  background-color: #f8f9fa;
-  width: calc(100% - 20px);
-  margin: 8px 0;
-  padding: 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-#menu-list li:hover {
-  background-color: #e9ecef;
 }
 
 /* Oculta a barra de navegação na tela de confirmação */
