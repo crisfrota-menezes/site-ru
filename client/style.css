@@ -17,9 +17,11 @@ html {
   background: #ffffff;
   border-radius: 10px;
   flex-direction: column;
+  /* centralize o container sem usar margens, para manter a responsividade */
   position: absolute;
-  bottom: 185px;
-  left: 775px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #admin-button {
@@ -64,9 +66,10 @@ html {
 #menina2 {
   /* centraliza no meio da tela, excluindo a navbar da esquerda que tem 250px: */
   margin-left: 250px;
-  width: 55%;
-  height: 55%;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -40%);
 }
 
 #navRU {
@@ -89,8 +92,11 @@ html {
   width: 80%;
   height: 70%;
   object-fit: contain;
-  margin-left: 10%;
-  margin-top: 5%;
+  position: absolute;
+  margin-left: 250px;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -45%);
 }
 
 h1 {
@@ -130,7 +136,6 @@ button[type="submit"] {
   height: 50px;
   width: 80%;
   border-radius: 12px;
-  /* Centraliza */
   margin-left: 10%;
 }
 
@@ -159,8 +164,6 @@ button[type="submit"]:hover {
 
 #finalizar-pedido {
   width: 200px !important; /* Largura fixa */
-  margin: 20px auto !important;
-  padding: 12px !important;
   font-size: 16px !important;
 }
 
