@@ -1,23 +1,13 @@
 /* Layout principal */
-body {
+body,
+html {
+  overflow: hidden;
+  height: 100%;
   margin: 0;
   padding: 0;
   min-height: 100vh;
   font-family: "Roboto", monospace;
   background-color: #d6d6d6;
-}
-
-body,
-html {
-  overflow: hidden;
-  height: 100%;
-}
-
-.auth-layout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
 }
 
 .container-small {
@@ -41,7 +31,8 @@ html {
 }
 
 /* Layout principal após login */
-#navbar {
+#navbar,
+#navbar-adm {
   position: fixed;
   bottom: 50%;
   width: 250px;
@@ -64,32 +55,6 @@ html {
   margin: 0;
 }
 
-#navbar button:hover {
-  background-color: #fecc00;
-}
-
-#menina2 {
-  /* centraliza no meio da tela, excluindo a navbar da esquerda que tem 250px: */
-  margin-left: 250px;
-  width: 55%;
-  height: 55%;
-  position: relative;
-}
-
-/* Layout principal após login */
-#navbar-adm {
-  position: fixed;
-  bottom: 50%;
-  width: 250px;
-  background: #d4d4d4;
-  color: rgb(0, 0, 0);
-  display: none; /* Inicialmente oculto */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-}
-
 #navbar-adm button {
   font-family: "Roboto", monospace;
   font-size: 20px;
@@ -100,8 +65,20 @@ html {
   margin: 0;
 }
 
+#navbar button:hover {
+  background-color: #fecc00;
+}
+
 #navbar-adm button:hover {
   background-color: #fecc00;
+}
+
+#menina2 {
+  /* centraliza no meio da tela, excluindo a navbar da esquerda que tem 250px: */
+  margin-left: 250px;
+  width: 55%;
+  height: 55%;
+  position: relative;
 }
 
 #navRU {
@@ -141,20 +118,6 @@ h1 {
 }
 
 button {
-  font-family: "Roboto", monospace;
-  padding: 10px;
-  margin: 5px;
-  background-color: #e0dfdf;
-  color: #000000;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-  font-size: 20px;
-  max-width: 400px;
-}
-
-#button-adm {
   font-family: "Roboto", monospace;
   padding: 10px;
   margin: 5px;
@@ -282,13 +245,6 @@ input {
   border-radius: 12px;
 }
 
-.cardapio-dia h3 {
-  color: #2c3e50;
-  border-bottom: 2px solid #fecc00;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
 .cardapio-item {
   display: flex;
   justify-content: space-between;
@@ -308,18 +264,6 @@ input {
   color: #34495e;
   width: 58%;
   text-align: right;
-}
-
-.aviso {
-  color: #e67e22;
-  text-align: center;
-  padding: 20px;
-}
-
-.erro {
-  color: #e74c3c;
-  text-align: center;
-  padding: 20px;
 }
 
 #cardapio-info p {
@@ -453,13 +397,6 @@ h2 {
   color: #28a745;
   letter-spacing: 3px;
   font-weight: bold;
-}
-
-#voltar-inicio {
-  background-color: #fecc00;
-  width: 200px;
-  margin: 20px auto 0;
-  display: block;
 }
 
 #finalizar-pedido:disabled {

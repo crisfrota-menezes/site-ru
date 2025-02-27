@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const senha = document.getElementById("senha").value;
 
       try {
-        const response = await fetch("/data/login", {
+        const response = await fetch("/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ ra, senha }),
@@ -304,8 +304,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         const relExecucaoList = document.getElementById("execucao-adm-list");
         if (relExecucaoList) {
           relExecucaoList.innerHTML = ""; // Limpa a lista antes de preencher
-  
-          execucao.forEach((registro) => { // Para cada item do array
+
+          execucao.forEach((registro) => {
+            // Para cada item do array
             const li = document.createElement("li");
             li.textContent = `Status: ${registro.status} - Data: ${registro.data}`;
             relExecucaoList.appendChild(li);
@@ -313,7 +314,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
       })
       .catch((error) => console.error("Erro ao carregar relatório:", error));
-  }  
+  }
 
   // Chame esta função ao exibir a tela de relatório de execução
   document.getElementById("nav-adm-execucao").addEventListener("click", () => {
