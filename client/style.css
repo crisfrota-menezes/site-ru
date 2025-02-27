@@ -11,8 +11,8 @@ html {
 }
 
 .container-small {
-  width: 329px;
-  height: 563px;
+  width: 350px;
+  height: 450px;
   padding: 20px;
   background: #ffffff;
   border-radius: 10px;
@@ -123,6 +123,7 @@ button {
   width: 100%;
   font-size: 20px;
   max-width: 400px;
+  margin-top: 35px;
 }
 
 button:hover {
@@ -147,11 +148,6 @@ button[type="submit"]:hover {
   /* coloca o botão mais centralizado no container small */
   margin-top: 10%;
   margin-bottom: 15%;
-}
-
-#student-button {
-  /* coloca o botão mais centralizado no container small */
-  margin-top: 20%;
 }
 
 .logo {
@@ -307,7 +303,8 @@ h2 {
   font-size: 30px;
 }
 
-#login {
+#login-header,
+#login-adm-header {
   font-family: "Roboto", monospace;
   text-align: center;
   width: 100%;

@@ -26,7 +26,7 @@
     </div>
 
     <div id="login-screen" class="container-small" style="display: none">
-      <h2 id="login">Validação<br />RA</h2>
+      <h2 id="login-header">Validação<br />RA</h2>
       <form id="login-form">
         <label for="ra">RA:</label>
         <input type="text" id="ra" required />
@@ -39,6 +39,39 @@
         class="logo"
         alt="PIN-UTFPR"
       />
+    </div>
+
+    <div id="login-adm-screen" class="container-small" style="display: none">
+      <h2 id="login-adm-header">Validação Administrador</h2>
+      <form id="login-adm-form">
+        <label for="login-adm">Login:</label>
+        <input type="text" id="login-adm" required />
+        <label for="senha-adm">Senha:</label>
+        <input type="password" id="senha-adm" required />
+        <button class="submit-adm" type="submit">Acessar</button>
+      </form>
+      <img
+        src="https://i.pinimg.com/736x/22/2c/4e/222c4e1b78ca0b22cfe8d0bbc44a5e5e.jpg"
+        class="logo"
+        alt="PIN-UTFPR"
+      />
+    </div>
+
+    <div id="navbar-adm" style="display: none">
+      <h1 id="navRU">Restaurante<br />Universitário</h1>
+      <button id="nav-adm-home">Home</button>
+      <button id="nav-adm-compras">Relatório de Compras</button>
+      <button id="nav-adm-execucao">Relatório de Execução</button>
+    </div>
+
+    <div id="compras-adm-screen" class="container-full" style="display: none">
+      <h2>Relatório de Compras</h2>
+      <ul id="compras-adm-list"></ul>
+    </div>
+
+    <div id="execucao-adm-screen" class="container-full" style="display: none">
+      <h2>Relatório de Execução</h2>
+      <ul id="execucao-adm-list"></ul>
     </div>
 
     <div id="navbar" style="display: none">
@@ -99,39 +132,6 @@
         id="menina2"
         alt="RU-UTFPR2"
       />
-    </div>
-
-    <div id="login-adm-screen" class="container-small" style="display: none">
-      <h2 id="login-adm">Validação Administrador</h2>
-      <form id="login-adm-form">
-        <label for="login-adm">Login:</label>
-        <input type="text" id="login-adm" required />
-        <label for="senha-adm">Senha:</label>
-        <input type="password" id="senha-adm" required />
-        <button class="submit-adm" type="submit">Acessar</button>
-      </form>
-      <img
-        src="https://i.pinimg.com/736x/22/2c/4e/222c4e1b78ca0b22cfe8d0bbc44a5e5e.jpg"
-        class="logo"
-        alt="PIN-UTFPR"
-      />
-    </div>
-
-    <div id="navbar-adm" style="display: none">
-      <h1 id="navRU">Restaurante<br />Universitário</h1>
-      <button id="nav-adm-home">Home</button>
-      <button id="nav-adm-compras">Relatório de Compras</button>
-      <button id="nav-adm-execucao">Relatório de Execução</button>
-    </div>
-
-    <div id="compras-adm-screen" class="container-full" style="display: none">
-      <h2>Relatório de Compras</h2>
-      <ul id="compras-adm-list"></ul>
-    </div>
-
-    <div id="execucao-adm-screen" class="container-full" style="display: none">
-      <h2>Relatório de Execução</h2>
-      <ul id="execucao-adm-list"></ul>
     </div>
 
     <script type="module" src="script.js"></script>
