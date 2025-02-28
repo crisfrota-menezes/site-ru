@@ -210,7 +210,6 @@ input {
   list-style-type: none;
 }
 
-#cardapio-list li,
 #carrinho-list li,
 #menu-list li,
 #lista-pagamento li {
@@ -221,6 +220,14 @@ input {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+
+#cardapio-list li {
+  background-color: #f8f9fa;
+  width: calc(100% - 20px);
+  margin-bottom: 8px 0;
+  padding: 12px;
+  border-radius: 4px;
 }
 
 #menu-list li:hover {
