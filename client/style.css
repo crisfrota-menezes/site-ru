@@ -395,3 +395,21 @@ h2 {
 .navbar-oculta {
   display: none !important;
 }
+
+/* Estilos da tabela das compras de administração */
+table {
+  width: 97%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #e0dfdf;
+}

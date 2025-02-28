@@ -263,27 +263,43 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   function carregarRelatorioCompras() {
+    // Carrega o relatório de compras colocando os dados em uma tabela (compras-adm-tabel):
     fetch("/data/compras.json")
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Erro ao carregar o relatório de compras.");
+        }
+        return response.json();
+      })
       .then((compras) => {
-        const relComprasList = document.getElementById("compras-adm-list");
-        if (relComprasList) {
-          relComprasList.innerHTML = ""; // Limpa a lista atual
+        const relComprasTabela = document.getElementById("compras-adm-table");
+        if (relComprasTabela) {
+          relComprasTabela.innerHTML = ""; // Limpa a tabela antes de preencher
 
+          // Cria o cabeçalho da tabela
+          const cabecalho = document.createElement("tr");
+          cabecalho.innerHTML = `
+            <th>Usuário</th>
+            <th>Itens</th>
+            <th>Total</th>
+            <th>Data</th>
+          `;  
+          relComprasTabela.appendChild(cabecalho);
+
+          // Preenche a tabela com os dados de cada compra
           compras.forEach((compra) => {
-            const li = document.createElement("li");
-            li.textContent = `Usuário: ${
-              compra.usuario
-            }, Total: R$ ${compra.total.toFixed(2)}, Código: ${
-              compra.codigo
-            }, Data: ${compra.data}`;
-            relComprasList.appendChild(li);
+            const linha = document.createElement("tr");
+            linha.innerHTML = `
+              <td>${compra.usuario}</td>
+              <td>${compra.itens.map((item) => item.nome).join(", ")}</td>
+              <td>${compra.total}</td>
+              <td>${compra.data}</td>
+            `;
+            relComprasTabela.appendChild(linha);
           });
         }
       })
-      .catch((error) => {
-        console.error("Erro ao carregar o relatório de compras:", error);
-      });
+      .catch((error) => console.error("Erro ao carregar relatório:", error));
   }
 
   // Chame esta função ao exibir a tela de relatório de compras
