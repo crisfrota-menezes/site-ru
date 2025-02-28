@@ -1,11 +1,11 @@
 export default class InterfaceUsuario {
   constructor() {
     this.relComprasTable = document.getElementById("compras-adm-table");
-    this.relExecList = document.getElementById("execucao-adm-list");
+    this.relExecTable = document.getElementById("execucao-adm-table");
     this.navbarAdm = document.getElementById("navbar-adm");
 
     // Verifica se os elementos existem
-    if (!this.relComprasTable || !this.relExecList || !this.navbarAdm) {
+    if (!this.relComprasTable || !this.relExecTable || !this.navbarAdm) {
       console.error("Erro: Um ou mais elementos do DOM não foram encontrados.");
     }
   }

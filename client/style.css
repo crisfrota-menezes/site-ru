@@ -223,7 +223,6 @@ input {
   transition: background-color 0.3s;
 }
 
-#cardapio-list li:hover,
 #menu-list li:hover {
   background-color: #e9ecef;
 }
@@ -396,20 +395,31 @@ h2 {
   display: none !important;
 }
 
+section {
+  overflow-x: auto;
+}
+
 /* Estilos da tabela das compras de administração */
 table {
-  width: 97%;
+  /* faz a tabela adaptar a largura conforme o conteúdo */
+  width: auto;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
 th,
 td {
-  border: 1px solid #ddd;
+  border: 1px solid #000000;
   padding: 8px;
   text-align: left;
 }
 
 th {
+  font-size: 20px;
+  background-color: #fecc00;
+}
+
+td {
+  font-size: 18px;
   background-color: #e0dfdf;
 }

@@ -283,7 +283,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             <th>Itens</th>
             <th>Total</th>
             <th>Data</th>
-          `;  
+          `;
           relComprasTabela.appendChild(cabecalho);
 
           // Preenche a tabela com os dados de cada compra
@@ -309,6 +309,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   function carregarRelatorioExecucao() {
+    // Carrega o relatório de execução colocando os dados em uma tabela (execucao-adm-tabel):
     fetch("/data/execucao.json")
       .then((response) => {
         if (!response.ok) {
@@ -317,15 +318,26 @@ document.addEventListener("DOMContentLoaded", async () => {
         return response.json();
       })
       .then((execucao) => {
-        const relExecucaoList = document.getElementById("execucao-adm-list");
-        if (relExecucaoList) {
-          relExecucaoList.innerHTML = ""; // Limpa a lista antes de preencher
+        const relExecucaoTabela = document.getElementById("execucao-adm-table");
+        if (relExecucaoTabela) {
+          relExecucaoTabela.innerHTML = ""; // Limpa a tabela antes de preencher
 
-          execucao.forEach((registro) => {
-            // Para cada item do array
-            const li = document.createElement("li");
-            li.textContent = `Status: ${registro.status} - Data: ${registro.data}`;
-            relExecucaoList.appendChild(li);
+          // Cria o cabeçalho da tabela
+          const cabecalho = document.createElement("tr");
+          cabecalho.innerHTML = `
+            <th>Status</th>
+            <th>Data</th>
+          `;
+          relExecucaoTabela.appendChild(cabecalho);
+
+          // Preenche a tabela com os dados de cada execução
+          execucao.forEach((execucao) => {
+            const linha = document.createElement("tr");
+            linha.innerHTML = `
+              <td>${execucao.status}</td>
+              <td>${execucao.data}</td>
+            `;
+            relExecucaoTabela.appendChild(linha);
           });
         }
       })
