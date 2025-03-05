@@ -25,21 +25,7 @@
       />
     </div>
 
-    <div id="login-screen" class="container-small" style="display: none">
-      <h2 id="login-header">Validação<br />RA</h2>
-      <form id="login-form">
-        <label for="ra">RA:</label>
-        <input type="text" id="ra" required />
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" required />
-        <button type="submit">Acessar</button>
-      </form>
-      <img
-        src="https://i.pinimg.com/736x/22/2c/4e/222c4e1b78ca0b22cfe8d0bbc44a5e5e.jpg"
-        class="logo"
-        alt="PIN-UTFPR"
-      />
-    </div>
+    <div id="dynamic-content"></div>
 
     <div id="login-adm-screen" class="container-small" style="display: none">
       <h2 id="login-adm-header">Validação Administrador</h2>
@@ -66,12 +52,16 @@
 
     <div id="compras-adm-screen" class="container-full" style="display: none">
       <h2>Relatório de Compras</h2>
-      <section id="tabela-compras"><table id="compras-adm-table"></table></section>
+      <section id="tabela-compras">
+        <table id="compras-adm-table"></table>
+      </section>
     </div>
 
     <div id="execucao-adm-screen" class="container-full" style="display: none">
       <h2>Relatório de Execução</h2>
-      <section id="tabela-exec"><table id="execucao-adm-table"></table></section>
+      <section id="tabela-exec">
+        <table id="execucao-adm-table"></table>
+      </section>
     </div>
 
     <div id="navbar" style="display: none">

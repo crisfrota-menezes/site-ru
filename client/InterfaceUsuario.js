@@ -35,6 +35,9 @@ export default class InterfaceUsuario {
       "pagamento-screen",
       "confirmacao-screen",
     ];
+    if (tela === "login-screen") {
+      return;
+    }
     telas.forEach((id) => {
       const elemento = document.getElementById(id);
       if (elemento) {

@@ -8,12 +8,17 @@ const PORT = 3000;
 
 // Middleware para servir arquivos estáticos
 app.use(express.static(path.join(__dirname, "client"))); // Servindo arquivos do front-end
+app.use("/html", express.static(path.join(__dirname, "client/html")));
 app.use("/data", express.static(path.join(__dirname, "data"))); // Servindo arquivos JSON
 app.use(express.json());
 
 // Rota principal
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "index.html"));
+});
+
+app.get("login.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "html", "login.html"));
 });
 
 // Rota para login (mantida como está)
@@ -52,7 +57,9 @@ app.post("/sucesso", (req, res) => {
         execucaoArray = JSON.parse(data); // Converte JSON para array
       } catch (error) {
         console.error("Erro ao interpretar JSON:", error);
-        return res.status(500).json({ success: false, message: "Erro no JSON do servidor." });
+        return res
+          .status(500)
+          .json({ success: false, message: "Erro no JSON do servidor." });
       }
     }
 
@@ -63,14 +70,23 @@ app.post("/sucesso", (req, res) => {
     });
 
     // Salva o JSON atualizado
-    fs.writeFile(filePath, JSON.stringify(execucaoArray, null, 2), (writeErr) => {
-      if (writeErr) {
-        console.error("Erro ao escrever no arquivo:", writeErr);
-        return res.status(500).json({ success: false, message: "Erro ao salvar execução." });
-      }
+    fs.writeFile(
+      filePath,
+      JSON.stringify(execucaoArray, null, 2),
+      (writeErr) => {
+        if (writeErr) {
+          console.error("Erro ao escrever no arquivo:", writeErr);
+          return res
+            .status(500)
+            .json({ success: false, message: "Erro ao salvar execução." });
+        }
 
-      res.json({ success: true, message: "Estado de execução atualizado com sucesso." });
-    });
+        res.json({
+          success: true,
+          message: "Estado de execução atualizado com sucesso.",
+        });
+      }
+    );
   });
 });
 

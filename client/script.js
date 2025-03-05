@@ -15,10 +15,25 @@ document.addEventListener("DOMContentLoaded", async () => {
   let usuarioAtual = null; // Armazena o usuário logado
 
   // Eventos de navegação
-  document.getElementById("student-button").addEventListener("click", () => {
-    usuarioAtual = new Usuario("estudante");
-    ui.mostrarTela("login-screen");
-  });
+  document
+    .getElementById("student-button")
+    .addEventListener("click", async () => {
+      usuarioAtual = new Usuario("estudante");
+
+      // Carrega o login dinamicamente
+      const response = await fetch("/html/login.html");
+      const html = await response.text();
+      const container = document.getElementById("dynamic-content");
+      container.innerHTML = html;
+      container.style.display = "flex";
+
+      // Oculta a tela anterior
+      document.querySelector(".container-small").style.display = "none";
+
+      // Re-inicializa o formulário
+      setupLoginForm();
+      container.querySelector(".container-small").style.display = "block";
+    });
 
   document.getElementById("visitor-button").addEventListener("click", () => {
     usuarioAtual = new Usuario("visitante");
@@ -119,46 +134,43 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
-  // Função para realizar o login
-  document
-    .getElementById("login-form")
-    .addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const ra = document.getElementById("ra").value;
-      const senha = document.getElementById("senha").value;
+  function setupLoginForm() {
+    const form = document.getElementById("login-form");
+    if (form) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const ra = document.getElementById("ra").value;
+        const senha = document.getElementById("senha").value;
 
-      try {
-        const response = await fetch("/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ra, senha }),
-        });
+        try {
+          const response = await fetch("/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ ra, senha }),
+          });
 
-        if (!response.ok) {
-          throw new Error("Erro ao realizar o login.");
-        }
-
-        const data = await response.json();
-
-        if (data.success) {
-          const usuario = new Usuario(data.tipo, data.ra);
-
-          if (usuario.tipo === "estudante") {
-            ui.atualizarNavbar(usuario);
-            ui.mostrarTela("home-screen");
+          if (!response.ok) {
+            throw new Error("Erro ao realizar o login.");
           }
-          // else{
 
-          //   uiAdm.atualizarNavbarAdm(usuario);
-          //   uiAdm.mostrarTela("home-screen");
-          // }
-        } else {
-          alert("RA ou senha incorretos. Tente novamente.");
+          const data = await response.json();
+
+          if (data.success) {
+            const usuario = new Usuario(data.tipo, data.ra);
+
+            if (usuario.tipo === "estudante") {
+              ui.atualizarNavbar(usuario);
+              ui.mostrarTela("home-screen");
+            }
+          } else {
+            alert("RA ou senha incorretos. Tente novamente.");
+          }
+        } catch (error) {
+          console.error(error);
         }
-      } catch (error) {
-        console.error(error);
-      }
-    });
+      });
+    }
+  }
 
   // Função para realizar o login adm
   document
